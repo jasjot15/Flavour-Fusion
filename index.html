@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavour Fusion – Nashik</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root {
+    --saffron: #E8720C;
+    --turmeric: #F5A623;
+    --cream: #FDF6EC;
+    --dark: #1A1208;
+    --brown: #5C3317;
+    --muted: #8B6F47;
+    --card: #FFFBF5;
+    --border: #E8D9C0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    background: var(--dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 24px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232,114,12,0.35) 0%, transparent 65%);
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    border: 1px solid rgba(245,166,35,0.4);
+    padding: 5px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 9vw, 80px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+    position: relative;
+  }
+  .hero h1 span { color: var(--saffron); font-style: italic; }
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+    position: relative;
+  }
+  .hero-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+    margin: 24px auto;
+    position: relative;
+  }
+  .hero-address {
+    font-size: 13.5px;
+    color: rgba(253,246,236,0.65);
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .qr-section {
+    text-align: center;
+    padding: 48px 24px 32px;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .qr-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    margin-bottom: 20px;
+  }
+  .qr-wrapper {
+    display: inline-block;
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(232,114,12,0.3), 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .qr-note {
+    color: rgba(253,246,236,0.45);
+    font-size: 12px;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .menu-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 52px 20px 60px;
+  }
+  .section-title-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section-title-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .section-title-wrap p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .category {
+    margin-bottom: 40px;
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(92,51,23,0.06);
+  }
+  .category-header {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .category-header .cat-emoji { font-size: 20px; }
+  .category-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 22px;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .item-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--dark);
+    flex: 1;
+    line-height: 1.4;
+  }
+  .item-name small {
+    display: block;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+  .item-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--saffron);
+    white-space: nowrap;
+    text-align: right;
+    min-width: 80px;
+  }
+  .item-price .price-label {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 300;
+    display: block;
+    text-align: right;
+  }
+
+  .badge-new {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--saffron);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-unlimited {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #2a7a2a;
+    color: white;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .combo-box {
+    background: linear-gradient(135deg, #1A1208 0%, #3d1f0a 100%);
+    border-radius: 16px;
+    padding: 24px 22px;
+    margin-top: 8px;
+    border: 1px solid rgba(232,114,12,0.3);
+  }
+  .combo-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--turmeric);
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .combo-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(232,114,12,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .combo-item:last-child { margin-bottom: 0; }
+  .combo-item-name {
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .combo-item-name small {
+    display: block;
+    font-size: 11.5px;
+    color: rgba(253,246,236,0.5);
+    margin-top: 3px;
+    font-weight: 300;
+  }
+  .combo-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--saffron);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .combo-price small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    display: block;
+    text-align: right;
+  }
+
+  footer {
+    background: var(--dark);
+    color: rgba(253,246,236,0.4);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--turmeric); }
+
+  #menu { scroll-margin-top: 20px; }
+
+  @media (max-width: 480px) {
+    .menu-item { padding: 11px 16px; }
+    .category-header { padding: 11px 16px; }
+    .item-name { font-size: 13px; }
+    .item-price { font-size: 13px; min-width: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ Pure Veg ✦ Nashik</div>
+  <h1>Flavour<br><span>Fusion</span></h1>
+  <p class="hero-sub">Menu Card</p>
+  <div class="hero-divider"></div>
+  <p class="hero-address">
+    Shop No. 5, Sunrich Apartment,<br>
+    Near Thete Hospital, Signal,<br>
+    Parijat Nagar, Nashik – 422005
+  </p>
+</section>
+
+<!-- QR CODE -->
+<section class="qr-section">
+  <p class="qr-label">📱 Scan to view our menu</p>
+  <div class="qr-wrapper">
+    <div id="qrcode"></div>
+  </div>
+  <p class="qr-note">Scan the QR code with your phone camera</p>
+</section>
+
+<!-- FULL MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-title-wrap">
+    <h2>Our Menu</h2>
+    <p>Fresh · Homestyle · Everyday</p>
+  </div>
+
+  <!-- BEVERAGES -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">☕</span>
+      <h3>Beverages</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Special Tea</div>
+      <div class="item-price">₹25</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Hot Coffee</div>
+      <div class="item-price">₹20</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Cold Coffee</div>
+      <div class="item-price">₹60</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Lassi Plain</div>
+      <div class="item-price">₹50</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Flavour Lassi<small>Mango · Strawberry · Pineapple · Banana · Mixed Fruits</small></div>
+      <div class="item-price">₹70</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Milkshake <span class="badge-new">New</span><small>Mango · Strawberry · Pineapple · Banana · Mixed Fruit</small></div>
+      <div class="item-price">₹70</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Masala Chhas</div>
+      <div class="item-price">₹30</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Masala Dahi</div>
+      <div class="item-price">₹30</div>
+    </div>
+  </div>
+
+  <!-- QUICK BITES -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">⚡</span>
+      <h3>Quick Bites</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Vada Pav</div>
+      <div class="item-price">₹25<span class="price-label">Cheese ₹45</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Indori Poha</div>
+      <div class="item-price">₹35</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Upma</div>
+      <div class="item-price">₹35</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Appe</div>
+      <div class="item-price">₹35</div>
+    </div>
+  </div>
+
+  <!-- SOUTH INDIAN -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🥘</span>
+      <h3>South Indian Delights</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Idli Sambar</div>
+      <div class="item-price">₹50</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Medu Vada Sambar</div>
+      <div class="item-price">₹50</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Dal Vada</div>
+      <div class="item-price">₹50</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Idli and Medu Vada</div>
+      <div class="item-price">₹60</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Sabudana Vada</div>
+      <div class="item-price">₹50</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Plain Maggie</div>
+      <div class="item-price">₹45<span class="price-label">Cheese ₹75</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Vegetable Maggie</div>
+      <div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Peri Peri Maggie</div>
+      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
+    </div>
+  </div>
+
+  <!-- DOSA -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🫓</span>
+      <h3>Dosa Varieties</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Plain Dosa</div>
+      <div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Masala Dosa</div>
+      <div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Peri Peri Masala Dosa</div>
+      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Special Flavour Fusion Dosa</div>
+      <div class="item-price">₹220</div>
+    </div>
+  </div>
+
+  <!-- MAHARASHTRIAN -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🌶️</span>
+      <h3>Maharashtrian Specials</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Misal + Papad + Dahi + Water Bottle</div>
+      <div class="item-price">₹120</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Vada Rassa</div>
+      <div class="item-price">₹100</div>
+    </div>
+  </div>
+
+  <!-- UTHAPPA -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🫔</span>
+      <h3>Uthappa Varieties</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Plain Uthappa</div>
+      <div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Onion Uthappa</div>
+      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Tomato Uthappa</div>
+      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Mixed Vegetable Uthappa</div>
+      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Masala Uthappa</div>
+      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
+    </div>
+  </div>
+
+  <!-- PARATHAS -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🫓</span>
+      <h3>Parathas</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Aalu Paratha</div>
+      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Paneer Paratha</div>
+      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Mungdal Paratha</div>
+      <div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div>
+    </div>
+  </div>
+
+  <!-- MAIN COURSE -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🍛</span>
+      <h3>Main Course</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Pavbhaji</div>
+      <div class="item-price">₹120<span class="price-label">Butter ₹140</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Cheese Pavbhaji</div>
+      <div class="item-price">₹140</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Unlimited Pavbhaji <span class="badge-unlimited">Unlimited</span><small>Served with Cold Drink</small></div>
+      <div class="item-price">₹159</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Pulav</div>
+      <div class="item-price">₹120<span class="price-label">Cheese ₹150</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Paneer Pulav</div>
+      <div class="item-price">₹150<span class="price-label">Cheese ₹180</span></div>
+    </div>
+  </div>
+
+  <!-- SANDWICH -->
+  <div class="category">
+    <div class="category-header">
+      <span class="cat-emoji">🥪</span>
+      <h3>Sandwich</h3>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Vegetable Sandwich</div>
+      <div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Peri Peri Vegetable Sandwich</div>
+      <div class="item-price">₹65<span class="price-label">Cheese ₹95</span></div>
+    </div>
+    <div class="menu-item">
+      <div class="item-name">Bombay Sandwich</div>
+      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
+    </div>
+  </div>
+
+  <!-- COMBO OFFERS -->
+  <div class="combo-box">
+    <h3>✦ Combo Offers ✦</h3>
+    <!-- <div class="combo-item">
+      <div class="combo-item-name">
+        South Indian Combo
+        <small>1 Idli · 1 Medu Vada · 1 Masala Dosa · 1 Special Tea</small>
+      </div>
+      <div class="combo-price">₹145<small>Special price</small></div>
+    </div> -->
+    <div class="combo-item">
+      <div class="combo-item-name">
+        Pavbhaji Combo
+        <small>Pavbhaji · Water Bottle (500ml) · Cold Drink (200ml)</small>
+      </div>
+      <div class="combo-price">₹149<small>Special price</small></div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <strong>Flavour Fusion</strong><br>
+  Shop No. 5, Sunrich Apartment, Near Thete Hospital,<br>
+  Signal, Parijat Nagar, Nashik – 422005<br><br>
+  ✦ Thank you for choosing Flavour Fusion ✦
+</footer>
+
+<script>
+  const pageUrl = window.location.href.split('#')[0] + '#menu';
+  new QRCode(document.getElementById("qrcode"), {
+    text: pageUrl,
+    width: 180,
+    height: 180,
+    colorDark: "#1A1208",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
