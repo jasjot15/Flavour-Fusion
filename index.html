@@ -300,6 +300,10 @@
 
   /* ====================== EXACT PRINT STYLES (Same as Website) ====================== */
 @media print {
+
+    .print-only {
+    display: block !important;
+  }
   @page {
     size: A4 portrait;
     margin: 8mm;
@@ -378,14 +382,6 @@
 .print-only {
   display: none !important;
 }
-
-/* Show QR only when printing on paper */
-/* @media print {
-  .print-only {
-    display: block !important;
-  }
-  
-} */
 </style>
 </head>
 <body>
