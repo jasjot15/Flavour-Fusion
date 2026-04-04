@@ -404,9 +404,14 @@
 <section class="qr-section">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
-    <div id="qrcode"></div>
+    <img 
+      id="qrcode-img" 
+      src="" 
+      alt="QR Code" 
+      style="width:220px; height:220px; display:block;"
+    >
   </div>
-  <p class="qr-note">Scan the QR code with your phone camera</p>
+  <p class="qr-note">Scan the QR code with your phone camera<br>flavour-fusion.pages.dev</p>
 </section>
 
 <!-- FULL MENU -->
@@ -685,11 +690,13 @@
 </footer>
 
 <script>
+  // Generate QR and immediately convert to base64 data URL
   window.addEventListener('load', function () {
-    var section = document.querySelector('.qr-section');
-    section.style.cssText = 'display:block !important; position:fixed; left:-9999px; top:0;';
+    var temp = document.createElement('div');
+    temp.style.cssText = 'position:fixed;left:-9999px;top:0;background:white;';
+    document.body.appendChild(temp);
 
-    new QRCode(document.getElementById("qrcode"), {
+    var qr = new QRCode(temp, {
       text: "https://flavour-fusion.pages.dev/",
       width: 220,
       height: 220,
@@ -698,16 +705,15 @@
       correctLevel: QRCode.CorrectLevel.M
     });
 
+    // Wait for canvas to render, then extract as permanent base64 image
     setTimeout(function () {
-      section.style.cssText = '';
-    }, 500);
-
-    window.addEventListener('beforeprint', function () {
-      var el = document.getElementById('qrcode');
-      el.style.display = 'none';
-      el.offsetHeight;
-      el.style.display = '';
-    });
+      var canvas = temp.querySelector('canvas');
+      if (canvas) {
+        var dataUrl = canvas.toDataURL('image/png');
+        document.getElementById('qrcode-img').src = dataUrl;
+      }
+      document.body.removeChild(temp);
+    }, 300);
   });
 </script>
 </body>
