@@ -403,9 +403,7 @@
 <section class="qr-section print-only">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://jasjot15.github.io/Flavour-Fusion/" 
-         alt="Flavour Fusion Menu QR Code" 
-         style="width: 220px; height: 220px; border-radius: 12px;">
+    <div id="qrcode"></div>
   </div>
   <p class="qr-note">Scan the QR code with your phone camera</p>
 </section>
@@ -686,11 +684,10 @@
 </footer>
 
 <script>
-  const pageUrl = window.location.href.split('#')[0] + '#menu';
   new QRCode(document.getElementById("qrcode"), {
-    text: pageUrl,
-    width: 180,
-    height: 180,
+    text: "https://jasjot15.github.io/Flavour-Fusion/",
+    width: 220,
+    height: 220,
     colorDark: "#1A1208",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.M
