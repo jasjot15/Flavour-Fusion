@@ -298,23 +298,18 @@
     .item-price { font-size: 13px; min-width: 70px; }
   }
 
-  /* ====================== EXACT PRINT STYLES (Same as Website) ====================== */
+/* ================== PRINT STYLES ================== */
 @media print {
-
-    .print-only {
-    display: block !important;
-  }
   @page {
     size: A4 portrait;
     margin: 8mm;
   }
 
   body {
-    background: #1A1208 !important;   /* Same dark background */
+    background: #1A1208 !important;
     color: #FDF6EC !important;
   }
 
-  /* Keep hero exactly same */
   .hero {
     background: #1A1208 !important;
     color: #FDF6EC !important;
@@ -326,18 +321,24 @@
     color: #F5A623 !important;
   }
 
-  .hero h1 {
-    color: #FDF6EC !important;
-  }
-  .hero h1 span {
-    color: #E8720C !important;
+  .hero h1 { color: #FDF6EC !important; }
+  .hero h1 span { color: #E8720C !important; }
+  .hero-sub, .hero-address { color: rgba(253,246,236,0.75) !important; }
+
+  /* Show QR section */
+  .print-only,
+  .qr-section {
+    display: block !important;
+    visibility: visible !important;
   }
 
-  .hero-sub, .hero-address {
-    color: rgba(253,246,236,0.75) !important;
+  #qrcode,
+  #qrcode img,
+  #qrcode canvas {
+    display: block !important;
+    visibility: visible !important;
   }
 
-  /* QR Section - Big & Clean for A4 */
   .qr-section {
     background: #1A1208 !important;
     padding: 40px 20px 50px !important;
@@ -354,11 +355,7 @@
     background: white !important;
     padding: 18px !important;
     border-radius: 18px !important;
-  }
-
-  .qr-wrapper img {
-    width: 265px !important;
-    height: 265px !important;
+    box-shadow: none !important;
   }
 
   .qr-note {
@@ -366,16 +363,20 @@
     font-size: 13px !important;
   }
 
-  /* Hide menu and footer when printing (we only want header + big QR) */
+  /* Hide menu and footer */
   .menu-section,
   footer {
     display: none !important;
   }
+}
 
-  /* Remove any shadows for clean print */
-  .qr-wrapper {
-    box-shadow: none !important;
-  }
+/* ================== HIDE QR ON SCREEN ================== */
+.print-only {
+  display: none !important;
+}
+
+.qr-section {
+  display: none !important;
 }
 
 /* ================== HIDE QR ON MOBILE/LIVE SITE ================== */
@@ -400,7 +401,7 @@
 </section>
 
 <!-- QR CODE - Only visible when printing -->
-<section class="qr-section print-only">
+<section class="qr-section">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
     <div id="qrcode"></div>
@@ -684,13 +685,29 @@
 </footer>
 
 <script>
-  new QRCode(document.getElementById("qrcode"), {
-    text: "https://jasjot15.github.io/Flavour-Fusion/",
-    width: 220,
-    height: 220,
-    colorDark: "#1A1208",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.M
+  window.addEventListener('load', function () {
+    var section = document.querySelector('.qr-section');
+    section.style.cssText = 'display:block !important; position:fixed; left:-9999px; top:0;';
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://flavour-fusion.pages.dev/",
+      width: 220,
+      height: 220,
+      colorDark: "#1A1208",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+
+    setTimeout(function () {
+      section.style.cssText = '';
+    }, 500);
+
+    window.addEventListener('beforeprint', function () {
+      var el = document.getElementById('qrcode');
+      el.style.display = 'none';
+      el.offsetHeight;
+      el.style.display = '';
+    });
   });
 </script>
 </body>
