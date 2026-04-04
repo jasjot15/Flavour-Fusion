@@ -298,53 +298,79 @@
     .item-price { font-size: 13px; min-width: 70px; }
   }
 
-  /* ====================== PRINT STYLES FOR A4 ====================== */
+  /* ====================== EXACT PRINT STYLES (Same as Website) ====================== */
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm;
+    margin: 8mm;
   }
 
   body {
-    background: white !important;
-    color: #1A1208;
-  }
-
-  /* Hide everything except hero + QR */
-  .menu-section,
-  footer,
-  .qr-note {
-    display: none !important;
-  }
-
-  .hero {
-    padding: 40px 20px 30px !important;
-    background: #1A1208 !important;
+    background: #1A1208 !important;   /* Same dark background */
     color: #FDF6EC !important;
   }
 
+  /* Keep hero exactly same */
+  .hero {
+    background: #1A1208 !important;
+    color: #FDF6EC !important;
+    padding: 55px 25px 45px !important;
+  }
+
+  .hero-badge {
+    border-color: rgba(245,166,35,0.5) !important;
+    color: #F5A623 !important;
+  }
+
+  .hero h1 {
+    color: #FDF6EC !important;
+  }
+  .hero h1 span {
+    color: #E8720C !important;
+  }
+
+  .hero-sub, .hero-address {
+    color: rgba(253,246,236,0.75) !important;
+  }
+
+  /* QR Section - Big & Clean for A4 */
   .qr-section {
-    padding: 30px 20px !important;
+    background: #1A1208 !important;
+    padding: 40px 20px 50px !important;
+    color: #FDF6EC !important;
+  }
+
+  .qr-label {
+    color: #F5A623 !important;
+    font-size: 15px !important;
+    letter-spacing: 4px;
+  }
+
+  .qr-wrapper {
     background: white !important;
+    padding: 18px !important;
+    border-radius: 18px !important;
   }
 
   .qr-wrapper img {
-    width: 260px !important;
-    height: 260px !important;
+    width: 265px !important;
+    height: 265px !important;
   }
 
-  .hero-badge,
-  .hero h1,
-  .hero-sub,
-  .hero-divider,
-  .hero-address {
-    color: inherit !important;
+  .qr-note {
+    color: rgba(253,246,236,0.6) !important;
+    font-size: 13px !important;
   }
 
-  /* Remove shadows and dark backgrounds for better printing */
+  /* Hide menu and footer when printing (we only want header + big QR) */
+  .menu-section,
+  footer {
+    display: none !important;
+  }
+
+  /* Remove any shadows for clean print */
   .qr-wrapper {
     box-shadow: none !important;
-    background: white;
   }
 }
 
@@ -354,14 +380,12 @@
 }
 
 /* Show QR only when printing on paper */
-@media print {
+/* @media print {
   .print-only {
     display: block !important;
   }
   
-  /* Optional: Hide menu section when printing if you want only QR + header */
-  /* .menu-section { display: none !important; } */
-}
+} */
 </style>
 </head>
 <body>
