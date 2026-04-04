@@ -297,6 +297,71 @@
     .item-name { font-size: 13px; }
     .item-price { font-size: 13px; min-width: 70px; }
   }
+
+  /* ====================== PRINT STYLES FOR A4 ====================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: white !important;
+    color: #1A1208;
+  }
+
+  /* Hide everything except hero + QR */
+  .menu-section,
+  footer,
+  .qr-note {
+    display: none !important;
+  }
+
+  .hero {
+    padding: 40px 20px 30px !important;
+    background: #1A1208 !important;
+    color: #FDF6EC !important;
+  }
+
+  .qr-section {
+    padding: 30px 20px !important;
+    background: white !important;
+  }
+
+  .qr-wrapper img {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .hero-badge,
+  .hero h1,
+  .hero-sub,
+  .hero-divider,
+  .hero-address {
+    color: inherit !important;
+  }
+
+  /* Remove shadows and dark backgrounds for better printing */
+  .qr-wrapper {
+    box-shadow: none !important;
+    background: white;
+  }
+}
+
+/* ================== HIDE QR ON MOBILE/LIVE SITE ================== */
+.print-only {
+  display: none !important;
+}
+
+/* Show QR only when printing on paper */
+@media print {
+  .print-only {
+    display: block !important;
+  }
+  
+  /* Optional: Hide menu section when printing if you want only QR + header */
+  /* .menu-section { display: none !important; } */
+}
 </style>
 </head>
 <body>
@@ -314,11 +379,13 @@
   </p>
 </section>
 
-<!-- QR CODE -->
-<section class="qr-section">
+<!-- QR CODE - Only visible when printing -->
+<section class="qr-section print-only">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
-    <div id="qrcode"></div>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://jasjot15.github.io/Flavour-Fusion/" 
+         alt="Flavour Fusion Menu QR Code" 
+         style="width: 220px; height: 220px; border-radius: 12px;">
   </div>
   <p class="qr-note">Scan the QR code with your phone camera</p>
 </section>
