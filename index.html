@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flavour Fusion – Nashik</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
   :root {
     --saffron: #E8720C;
@@ -84,31 +83,37 @@
     position: relative;
   }
 
+  /* QR section hidden on screen, shown on print */
   .qr-section {
+    display: none;
     text-align: center;
-    padding: 48px 24px 32px;
+    padding: 48px 24px 40px;
     background: var(--dark);
-    border-top: 1px solid rgba(255,255,255,0.05);
   }
   .qr-label {
-    font-size: 11px;
-    letter-spacing: 3px;
+    font-size: 13px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--turmeric);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .qr-wrapper {
     display: inline-block;
     background: white;
-    padding: 16px;
+    padding: 18px;
     border-radius: 16px;
-    box-shadow: 0 0 0 1px rgba(232,114,12,0.3), 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .qr-wrapper img {
+    width: 240px;
+    height: 240px;
+    display: block;
   }
   .qr-note {
-    color: rgba(253,246,236,0.45);
-    font-size: 12px;
-    margin-top: 16px;
+    color: rgba(253,246,236,0.6);
+    font-size: 13px;
+    margin-top: 18px;
     letter-spacing: 0.5px;
+    line-height: 1.8;
   }
 
   .menu-section {
@@ -298,91 +303,50 @@
     .item-price { font-size: 13px; min-width: 70px; }
   }
 
-/* ================== PRINT STYLES ================== */
-@media print {
-  @page {
-    size: A4 portrait;
-    margin: 8mm;
+  /* ================== PRINT STYLES ================== */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 8mm;
+    }
+
+    body {
+      background: #1A1208 !important;
+      color: #FDF6EC !important;
+    }
+
+    .hero {
+      background: #1A1208 !important;
+      color: #FDF6EC !important;
+      padding: 55px 25px 45px !important;
+    }
+
+    .hero-badge {
+      border-color: rgba(245,166,35,0.5) !important;
+      color: #F5A623 !important;
+    }
+
+    .hero h1 { color: #FDF6EC !important; }
+    .hero h1 span { color: #E8720C !important; }
+    .hero-sub, .hero-address { color: rgba(253,246,236,0.75) !important; }
+
+    /* SHOW QR on print */
+    .qr-section {
+      display: block !important;
+      background: #1A1208 !important;
+      padding: 40px 20px 50px !important;
+    }
+
+    .qr-wrapper {
+      box-shadow: none !important;
+    }
+
+    /* Hide menu and footer */
+    .menu-section,
+    footer {
+      display: none !important;
+    }
   }
-
-  body {
-    background: #1A1208 !important;
-    color: #FDF6EC !important;
-  }
-
-  .hero {
-    background: #1A1208 !important;
-    color: #FDF6EC !important;
-    padding: 55px 25px 45px !important;
-  }
-
-  .hero-badge {
-    border-color: rgba(245,166,35,0.5) !important;
-    color: #F5A623 !important;
-  }
-
-  .hero h1 { color: #FDF6EC !important; }
-  .hero h1 span { color: #E8720C !important; }
-  .hero-sub, .hero-address { color: rgba(253,246,236,0.75) !important; }
-
-  /* Show QR section */
-  .print-only,
-  .qr-section {
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  #qrcode,
-  #qrcode img,
-  #qrcode canvas {
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  .qr-section {
-    background: #1A1208 !important;
-    padding: 40px 20px 50px !important;
-    color: #FDF6EC !important;
-  }
-
-  .qr-label {
-    color: #F5A623 !important;
-    font-size: 15px !important;
-    letter-spacing: 4px;
-  }
-
-  .qr-wrapper {
-    background: white !important;
-    padding: 18px !important;
-    border-radius: 18px !important;
-    box-shadow: none !important;
-  }
-
-  .qr-note {
-    color: rgba(253,246,236,0.6) !important;
-    font-size: 13px !important;
-  }
-
-  /* Hide menu and footer */
-  .menu-section,
-  footer {
-    display: none !important;
-  }
-}
-
-/* ================== HIDE QR ON SCREEN ================== */
-.print-only {
-  display: none !important;
-}
-
-.qr-section {
-  display: none !important;
-}
-
-/* ================== HIDE QR ON MOBILE/LIVE SITE ================== */
-.print-only {
-  display: none !important;
-}
 </style>
 </head>
 <body>
@@ -400,18 +364,13 @@
   </p>
 </section>
 
-<!-- QR CODE - Only visible when printing -->
+<!-- QR CODE — hidden on screen, visible only when printing -->
 <section class="qr-section">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
-    <img 
-      id="qrcode-img" 
-      src="" 
-      alt="QR Code" 
-      style="width:220px; height:220px; display:block;"
-    >
+    <img src="data:image/png;base64,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" alt="QR Code – flavour-fusion.pages.dev" width="240" height="240">
   </div>
-  <p class="qr-note">Scan the QR code with your phone camera<br>flavour-fusion.pages.dev</p>
+  <p class="qr-note">flavour-fusion.pages.dev</p>
 </section>
 
 <!-- FULL MENU -->
@@ -423,254 +382,94 @@
 
   <!-- BEVERAGES -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">☕</span>
-      <h3>Beverages</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Special Tea</div>
-      <div class="item-price">₹25</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Hot Coffee</div>
-      <div class="item-price">₹20</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Cold Coffee</div>
-      <div class="item-price">₹60</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Lassi Plain</div>
-      <div class="item-price">₹50</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Flavour Lassi<small>Mango · Strawberry · Pineapple · Banana · Mixed Fruits</small></div>
-      <div class="item-price">₹70</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Milkshake <span class="badge-new">New</span><small>Mango · Strawberry · Pineapple · Banana · Mixed Fruit</small></div>
-      <div class="item-price">₹70</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Masala Chhas</div>
-      <div class="item-price">₹30</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Masala Dahi</div>
-      <div class="item-price">₹30</div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">☕</span><h3>Beverages</h3></div>
+    <div class="menu-item"><div class="item-name">Special Tea</div><div class="item-price">₹25</div></div>
+    <div class="menu-item"><div class="item-name">Hot Coffee</div><div class="item-price">₹20</div></div>
+    <div class="menu-item"><div class="item-name">Cold Coffee</div><div class="item-price">₹60</div></div>
+    <div class="menu-item"><div class="item-name">Lassi Plain</div><div class="item-price">₹50</div></div>
+    <div class="menu-item"><div class="item-name">Flavour Lassi<small>Mango · Strawberry · Pineapple · Banana · Mixed Fruits</small></div><div class="item-price">₹70</div></div>
+    <div class="menu-item"><div class="item-name">Milkshake <span class="badge-new">New</span><small>Mango · Strawberry · Pineapple · Banana · Mixed Fruit</small></div><div class="item-price">₹70</div></div>
+    <div class="menu-item"><div class="item-name">Masala Chhas</div><div class="item-price">₹30</div></div>
+    <div class="menu-item"><div class="item-name">Masala Dahi</div><div class="item-price">₹30</div></div>
   </div>
 
   <!-- QUICK BITES -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">⚡</span>
-      <h3>Quick Bites</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Vada Pav</div>
-      <div class="item-price">₹25<span class="price-label">Cheese ₹45</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Indori Poha</div>
-      <div class="item-price">₹35</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Upma</div>
-      <div class="item-price">₹35</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Appe</div>
-      <div class="item-price">₹35</div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">⚡</span><h3>Quick Bites</h3></div>
+    <div class="menu-item"><div class="item-name">Vada Pav</div><div class="item-price">₹25<span class="price-label">Cheese ₹45</span></div></div>
+    <div class="menu-item"><div class="item-name">Indori Poha</div><div class="item-price">₹35</div></div>
+    <div class="menu-item"><div class="item-name">Upma</div><div class="item-price">₹35</div></div>
+    <div class="menu-item"><div class="item-name">Appe</div><div class="item-price">₹35</div></div>
   </div>
 
   <!-- SOUTH INDIAN -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🥘</span>
-      <h3>South Indian Delights</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Idli Sambar</div>
-      <div class="item-price">₹50</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Medu Vada Sambar</div>
-      <div class="item-price">₹50</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Dal Vada</div>
-      <div class="item-price">₹50</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Idli and Medu Vada</div>
-      <div class="item-price">₹60</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Sabudana Vada</div>
-      <div class="item-price">₹50</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Plain Maggie</div>
-      <div class="item-price">₹45<span class="price-label">Cheese ₹75</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Vegetable Maggie</div>
-      <div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Peri Peri Maggie</div>
-      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🥘</span><h3>South Indian Delights</h3></div>
+    <div class="menu-item"><div class="item-name">Idli Sambar</div><div class="item-price">₹50</div></div>
+    <div class="menu-item"><div class="item-name">Medu Vada Sambar</div><div class="item-price">₹50</div></div>
+    <div class="menu-item"><div class="item-name">Dal Vada</div><div class="item-price">₹50</div></div>
+    <div class="menu-item"><div class="item-name">Idli and Medu Vada</div><div class="item-price">₹60</div></div>
+    <div class="menu-item"><div class="item-name">Sabudana Vada</div><div class="item-price">₹50</div></div>
+    <div class="menu-item"><div class="item-name">Plain Maggie</div><div class="item-price">₹45<span class="price-label">Cheese ₹75</span></div></div>
+    <div class="menu-item"><div class="item-name">Vegetable Maggie</div><div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div></div>
+    <div class="menu-item"><div class="item-name">Peri Peri Maggie</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
   </div>
 
   <!-- DOSA -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🫓</span>
-      <h3>Dosa Varieties</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Plain Dosa</div>
-      <div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Masala Dosa</div>
-      <div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Peri Peri Masala Dosa</div>
-      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Special Flavour Fusion Dosa</div>
-      <div class="item-price">₹220</div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🫓</span><h3>Dosa Varieties</h3></div>
+    <div class="menu-item"><div class="item-name">Plain Dosa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
+    <div class="menu-item"><div class="item-name">Masala Dosa</div><div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div></div>
+    <div class="menu-item"><div class="item-name">Peri Peri Masala Dosa</div><div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div></div>
+    <div class="menu-item"><div class="item-name">Special Flavour Fusion Dosa</div><div class="item-price">₹220</div></div>
   </div>
 
   <!-- MAHARASHTRIAN -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🌶️</span>
-      <h3>Maharashtrian Specials</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Misal + Papad + Dahi + Water Bottle</div>
-      <div class="item-price">₹120</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Vada Rassa</div>
-      <div class="item-price">₹100</div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🌶️</span><h3>Maharashtrian Specials</h3></div>
+    <div class="menu-item"><div class="item-name">Misal + Papad + Dahi + Water Bottle</div><div class="item-price">₹120</div></div>
+    <div class="menu-item"><div class="item-name">Vada Rassa</div><div class="item-price">₹100</div></div>
   </div>
 
   <!-- UTHAPPA -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🫔</span>
-      <h3>Uthappa Varieties</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Plain Uthappa</div>
-      <div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Onion Uthappa</div>
-      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Tomato Uthappa</div>
-      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Mixed Vegetable Uthappa</div>
-      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Masala Uthappa</div>
-      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🫔</span><h3>Uthappa Varieties</h3></div>
+    <div class="menu-item"><div class="item-name">Plain Uthappa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
+    <div class="menu-item"><div class="item-name">Onion Uthappa</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
+    <div class="menu-item"><div class="item-name">Tomato Uthappa</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
+    <div class="menu-item"><div class="item-name">Mixed Vegetable Uthappa</div><div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div></div>
+    <div class="menu-item"><div class="item-name">Masala Uthappa</div><div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div></div>
   </div>
 
   <!-- PARATHAS -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🫓</span>
-      <h3>Parathas</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Aalu Paratha</div>
-      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Paneer Paratha</div>
-      <div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Mungdal Paratha</div>
-      <div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🫓</span><h3>Parathas</h3></div>
+    <div class="menu-item"><div class="item-name">Aalu Paratha</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
+    <div class="menu-item"><div class="item-name">Paneer Paratha</div><div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div></div>
+    <div class="menu-item"><div class="item-name">Mungdal Paratha</div><div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div></div>
   </div>
 
   <!-- MAIN COURSE -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🍛</span>
-      <h3>Main Course</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Pavbhaji</div>
-      <div class="item-price">₹120<span class="price-label">Butter ₹140</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Cheese Pavbhaji</div>
-      <div class="item-price">₹140</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Unlimited Pavbhaji <span class="badge-unlimited">Unlimited</span><small>Served with Cold Drink</small></div>
-      <div class="item-price">₹159</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Pulav</div>
-      <div class="item-price">₹120<span class="price-label">Cheese ₹150</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Paneer Pulav</div>
-      <div class="item-price">₹150<span class="price-label">Cheese ₹180</span></div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🍛</span><h3>Main Course</h3></div>
+    <div class="menu-item"><div class="item-name">Pavbhaji</div><div class="item-price">₹120<span class="price-label">Butter ₹140</span></div></div>
+    <div class="menu-item"><div class="item-name">Cheese Pavbhaji</div><div class="item-price">₹140</div></div>
+    <div class="menu-item"><div class="item-name">Unlimited Pavbhaji <span class="badge-unlimited">Unlimited</span><small>Served with Cold Drink</small></div><div class="item-price">₹159</div></div>
+    <div class="menu-item"><div class="item-name">Pulav</div><div class="item-price">₹120<span class="price-label">Cheese ₹150</span></div></div>
+    <div class="menu-item"><div class="item-name">Paneer Pulav</div><div class="item-price">₹150<span class="price-label">Cheese ₹180</span></div></div>
   </div>
 
   <!-- SANDWICH -->
   <div class="category">
-    <div class="category-header">
-      <span class="cat-emoji">🥪</span>
-      <h3>Sandwich</h3>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Vegetable Sandwich</div>
-      <div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Peri Peri Vegetable Sandwich</div>
-      <div class="item-price">₹65<span class="price-label">Cheese ₹95</span></div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">Bombay Sandwich</div>
-      <div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div>
-    </div>
+    <div class="category-header"><span class="cat-emoji">🥪</span><h3>Sandwich</h3></div>
+    <div class="menu-item"><div class="item-name">Vegetable Sandwich</div><div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div></div>
+    <div class="menu-item"><div class="item-name">Peri Peri Vegetable Sandwich</div><div class="item-price">₹65<span class="price-label">Cheese ₹95</span></div></div>
+    <div class="menu-item"><div class="item-name">Bombay Sandwich</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
   </div>
 
   <!-- COMBO OFFERS -->
   <div class="combo-box">
     <h3>✦ Combo Offers ✦</h3>
-    <!-- <div class="combo-item">
-      <div class="combo-item-name">
-        South Indian Combo
-        <small>1 Idli · 1 Medu Vada · 1 Masala Dosa · 1 Special Tea</small>
-      </div>
-      <div class="combo-price">₹145<small>Special price</small></div>
-    </div> -->
     <div class="combo-item">
       <div class="combo-item-name">
         Pavbhaji Combo
@@ -689,32 +488,5 @@
   ✦ Thank you for choosing Flavour Fusion ✦
 </footer>
 
-<script>
-  // Generate QR and immediately convert to base64 data URL
-  window.addEventListener('load', function () {
-    var temp = document.createElement('div');
-    temp.style.cssText = 'position:fixed;left:-9999px;top:0;background:white;';
-    document.body.appendChild(temp);
-
-    var qr = new QRCode(temp, {
-      text: "https://flavour-fusion.pages.dev/",
-      width: 220,
-      height: 220,
-      colorDark: "#1A1208",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.M
-    });
-
-    // Wait for canvas to render, then extract as permanent base64 image
-    setTimeout(function () {
-      var canvas = temp.querySelector('canvas');
-      if (canvas) {
-        var dataUrl = canvas.toDataURL('image/png');
-        document.getElementById('qrcode-img').src = dataUrl;
-      }
-      document.body.removeChild(temp);
-    }, 300);
-  });
-</script>
 </body>
 </html>
