@@ -4,24 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flavour Fusion – Best Pavbhaji in Parijat Nagar, Nashik | Pure Veg Restaurant</title>
-<meta name="description" content="Best pure veg restaurant in Parijat Nagar, Nashik. Famous for Pavbhaji, Dosa, Misal, and unlimited combos. Order online for pickup - Shop No. 5, Sunrich Apartment, Near Thete Hospital.">
-<meta name="keywords" content="pavbhaji in parijat nagar, best restaurant near thete hospital, pure veg nashik, flavour fusion menu, dosa delivery nashik, maharashtrian food parijat nagar">
-<meta name="author" content="Flavour Fusion">
-<meta name="robots" content="index, follow">
-<meta name="geo.region" content="IN-MH">
-<meta name="geo.placename" content="Nashik">
-<meta name="geo.position" content="19.9975;73.7898">
-<meta name="ICBM" content="19.9975,73.7898">
+<meta name="description" content="Best pure veg restaurant in Parijat Nagar, Nashik. Famous for Pavbhaji, Dosa, Misal, and unlimited combos. Order online for pickup.">
 <link rel="canonical" href="https://flavour-fusion.pages.dev/">
-
-<!-- Open Graph / Social Media -->
-<meta property="og:type" content="restaurant.menu">
-<meta property="og:title" content="Flavour Fusion - Best Pavbhaji in Parijat Nagar, Nashik">
-<meta property="og:description" content="Pure Veg Restaurant serving authentic Pavbhaji, South Indian, and Maharashtrian delicacies. Call to order!">
-<meta property="og:url" content="https://flavour-fusion.pages.dev/">
-<meta property="og:site_name" content="Flavour Fusion Nashik">
-
-<!-- JSON-LD Structured Data for Local Business -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,8 +13,8 @@
   "name": "Flavour Fusion",
   "url": "https://flavour-fusion.pages.dev/",
   "telephone": "+919405172144",
-  "priceRange": "₹₹",
-  "servesCuisine": ["Indian", "South Indian", "Maharashtrian", "Fast Food", "Vegetarian"],
+  "priceRange": "\u20b9\u20b9",
+  "servesCuisine": ["Indian", "South Indian", "Maharashtrian", "Vegetarian"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Shop No. 5, Sunrich Apartment, Near Thete Hospital, Signal, Parijat Nagar",
@@ -39,22 +23,14 @@
     "postalCode": "422005",
     "addressCountry": "IN"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "19.9975",
-    "longitude": "73.7898"
-  },
+  "geo": {"@type": "GeoCoordinates", "latitude": "19.9975", "longitude": "73.7898"},
   "openingHours": ["Mo-Su 09:00-22:00"],
   "menu": "https://flavour-fusion.pages.dev/#menu"
 }
 </script>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-control-geocoder/2.4.0/Control.Geocoder.css"/>
-
 <style>
-  /* Your existing CSS remains exactly the same */
   :root {
     --saffron: #E8720C;
     --turmeric: #F5A623;
@@ -66,502 +42,76 @@
     --border: #E8D9C0;
     --green: #2a7a2a;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--cream);
-    color: var(--dark);
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--dark);
-    color: var(--cream);
-    text-align: center;
-    padding: 60px 24px 50px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(232,114,12,0.35) 0%, transparent 65%);
-  }
-  .hero-badge {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--turmeric);
-    border: 1px solid rgba(245,166,35,0.4);
-    padding: 5px 16px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 9vw, 80px);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -1px;
-    position: relative;
-  }
+  body { background: var(--cream); color: var(--dark); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+  .hero { background: var(--dark); color: var(--cream); text-align: center; padding: 60px 24px 50px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(232,114,12,0.35) 0%, transparent 65%); }
+  .hero-badge { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--turmeric); border: 1px solid rgba(245,166,35,0.4); padding: 5px 16px; border-radius: 100px; margin-bottom: 20px; position: relative; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 9vw, 80px); font-weight: 900; line-height: 1; letter-spacing: -1px; position: relative; }
   .hero h1 span { color: var(--saffron); font-style: italic; }
-  .hero-sub {
-    font-size: 13px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 10px;
-    position: relative;
-  }
-  .hero-divider {
-    width: 60px; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--saffron), transparent);
-    margin: 24px auto;
-    position: relative;
-  }
-  .hero-address {
-    font-size: 13.5px;
-    color: rgba(253,246,236,0.65);
-    max-width: 320px;
-    margin: 0 auto;
-    line-height: 1.7;
-    position: relative;
-  }
-
-  /* ── CALL-TO-ORDER BANNER ── */
-  .order-banner {
-    background: linear-gradient(135deg, #1f3a1f 0%, #2a5c2a 100%);
-    border-top: 1px solid rgba(245,166,35,0.25);
-    border-bottom: 1px solid rgba(245,166,35,0.25);
-    padding: 20px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .order-banner::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(42,122,42,0.4) 0%, transparent 70%);
-  }
-  .order-banner-inner {
-    position: relative;
-    max-width: 520px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .order-banner-tag {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7ed07e;
-    border: 1px solid rgba(126,208,126,0.3);
-    padding: 3px 14px;
-    border-radius: 100px;
-  }
-  .order-banner-text {
-    font-size: 14.5px;
-    color: rgba(253,246,236,0.9);
-    line-height: 1.6;
-    font-weight: 400;
-  }
-  .order-banner-text strong {
-    color: var(--turmeric);
-  }
-  .call-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    background: var(--saffron);
-    color: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    padding: 12px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 18px rgba(232,114,12,0.45);
-    position: relative;
-    overflow: hidden;
-  }
-  .call-btn::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: rgba(255,255,255,0.08);
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
+  .hero-sub { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-top: 10px; position: relative; }
+  .hero-divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--saffron), transparent); margin: 24px auto; position: relative; }
+  .hero-address { font-size: 13.5px; color: rgba(253,246,236,0.65); max-width: 320px; margin: 0 auto; line-height: 1.7; position: relative; }
+  .order-banner { background: linear-gradient(135deg, #1f3a1f 0%, #2a5c2a 100%); border-top: 1px solid rgba(245,166,35,0.25); border-bottom: 1px solid rgba(245,166,35,0.25); padding: 20px 24px; text-align: center; position: relative; overflow: hidden; }
+  .order-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(42,122,42,0.4) 0%, transparent 70%); }
+  .order-banner-inner { position: relative; max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .order-banner-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #7ed07e; border: 1px solid rgba(126,208,126,0.3); padding: 3px 14px; border-radius: 100px; }
+  .order-banner-text { font-size: 14.5px; color: rgba(253,246,236,0.9); line-height: 1.6; font-weight: 400; }
+  .order-banner-text strong { color: var(--turmeric); }
+  .call-btn { display: inline-flex; align-items: center; gap: 9px; background: var(--saffron); color: white; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.3px; padding: 12px 28px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease; box-shadow: 0 4px 18px rgba(232,114,12,0.45); position: relative; overflow: hidden; }
   .call-btn:hover { background: #d1640b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,114,12,0.55); }
-  .call-btn:hover::before { opacity: 1; }
   .call-btn:active { transform: translateY(0); }
   .call-btn svg { flex-shrink: 0; animation: ringPulse 2.5s ease-in-out infinite; }
-  @keyframes ringPulse {
-    0%, 100% { transform: rotate(0deg); }
-    10% { transform: rotate(-15deg); }
-    20% { transform: rotate(15deg); }
-    30% { transform: rotate(-10deg); }
-    40% { transform: rotate(10deg); }
-    50% { transform: rotate(0deg); }
-  }
-  .call-btn-note {
-    font-size: 11px;
-    color: rgba(253,246,236,0.45);
-    letter-spacing: 0.3px;
-  }
-
-  /* ── QR section (print only) ── */
-  .qr-section {
-    display: none;
-    text-align: center;
-    padding: 48px 24px 40px;
-    background: var(--dark);
-  }
-  .qr-label {
-    font-size: 13px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--turmeric);
-    margin-bottom: 24px;
-  }
-  .qr-wrapper {
-    display: inline-block;
-    background: white;
-    padding: 18px;
-    border-radius: 16px;
-  }
+  @keyframes ringPulse { 0%, 100% { transform: rotate(0deg); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(15deg); } 30% { transform: rotate(-10deg); } 40% { transform: rotate(10deg); } 50% { transform: rotate(0deg); } }
+  .call-btn-note { font-size: 11px; color: rgba(253,246,236,0.45); letter-spacing: 0.3px; }
+  .qr-section { display: none; text-align: center; padding: 48px 24px 40px; background: var(--dark); }
+  .qr-label { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--turmeric); margin-bottom: 24px; }
+  .qr-wrapper { display: inline-block; background: white; padding: 18px; border-radius: 16px; }
   .qr-wrapper img { width: 240px; height: 240px; display: block; }
-  .qr-note {
-    color: rgba(253,246,236,0.6);
-    font-size: 13px;
-    margin-top: 18px;
-    letter-spacing: 0.5px;
-    line-height: 1.8;
-  }
-
-  /* ── MENU SECTION ── */
-  .menu-section {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 52px 20px 60px;
-  }
-  .section-title-wrap {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .section-title-wrap h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--dark);
-  }
-  .section-title-wrap p {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  .category {
-    margin-bottom: 40px;
-    background: var(--card);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(92,51,23,0.06);
-  }
-  .category-header {
-    background: var(--dark);
-    color: var(--cream);
-    padding: 12px 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .qr-note { color: rgba(253,246,236,0.6); font-size: 13px; margin-top: 18px; letter-spacing: 0.5px; line-height: 1.8; }
+  .menu-section { max-width: 720px; margin: 0 auto; padding: 52px 20px 60px; }
+  .section-title-wrap { text-align: center; margin-bottom: 40px; }
+  .section-title-wrap h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--dark); }
+  .section-title-wrap p { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .category { margin-bottom: 40px; background: var(--card); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 2px 12px rgba(92,51,23,0.06); }
+  .category-header { background: var(--dark); color: var(--cream); padding: 12px 22px; display: flex; align-items: center; gap: 10px; }
   .category-header .cat-emoji { font-size: 20px; }
-  .category-header h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-  }
-
-  .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 22px;
-    border-bottom: 1px solid var(--border);
-    gap: 12px;
-  }
+  .category-header h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; letter-spacing: 0.3px; }
+  .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 22px; border-bottom: 1px solid var(--border); gap: 12px; }
   .menu-item:last-child { border-bottom: none; }
-  .item-name {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--dark);
-    flex: 1;
-    line-height: 1.4;
-  }
-  .item-name small {
-    display: block;
-    font-size: 11.5px;
-    color: var(--muted);
-    margin-top: 2px;
-    font-weight: 300;
-  }
-  .item-price {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--saffron);
-    white-space: nowrap;
-    text-align: right;
-    min-width: 80px;
-  }
-  .item-price .price-label {
-    font-size: 10px;
-    color: var(--muted);
-    font-weight: 300;
-    display: block;
-    text-align: right;
-  }
-
-  .badge-new {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: var(--saffron);
-    color: white;
-    padding: 2px 7px;
-    border-radius: 100px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-  .badge-unlimited {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: #2a7a2a;
-    color: white;
-    padding: 2px 7px;
-    border-radius: 100px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  /* ── COMBO BOX ── */
-  .combo-box {
-    background: linear-gradient(135deg, #1A1208 0%, #3d1f0a 100%);
-    border-radius: 16px;
-    padding: 24px 22px;
-    margin-top: 8px;
-    border: 1px solid rgba(232,114,12,0.3);
-  }
-  .combo-box h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--turmeric);
-    font-size: 17px;
-    text-align: center;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-  }
-  .combo-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(232,114,12,0.2);
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
+  .item-name { font-size: 14px; font-weight: 400; color: var(--dark); flex: 1; line-height: 1.4; }
+  .item-name small { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; font-weight: 300; }
+  .item-price { font-size: 14px; font-weight: 500; color: var(--saffron); white-space: nowrap; text-align: right; min-width: 80px; }
+  .item-price .price-label { font-size: 10px; color: var(--muted); font-weight: 300; display: block; text-align: right; }
+  .badge-new { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: var(--saffron); color: white; padding: 2px 7px; border-radius: 100px; margin-left: 6px; vertical-align: middle; }
+  .badge-unlimited { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: #2a7a2a; color: white; padding: 2px 7px; border-radius: 100px; margin-left: 6px; vertical-align: middle; }
+  .combo-box { background: linear-gradient(135deg, #1A1208 0%, #3d1f0a 100%); border-radius: 16px; padding: 24px 22px; margin-top: 8px; border: 1px solid rgba(232,114,12,0.3); }
+  .combo-box h3 { font-family: 'Playfair Display', serif; color: var(--turmeric); font-size: 17px; text-align: center; margin-bottom: 18px; letter-spacing: 1px; }
+  .combo-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,114,12,0.2); border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .combo-item:last-child { margin-bottom: 0; }
-  .combo-item-name {
-    color: var(--cream);
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .combo-item-name small {
-    display: block;
-    font-size: 11.5px;
-    color: rgba(253,246,236,0.5);
-    margin-top: 3px;
-    font-weight: 300;
-  }
-  .combo-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--saffron);
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .combo-price small {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    color: var(--muted);
-    display: block;
-    text-align: right;
-  }
-
-  /* ── MAP SECTION ── */
-  .map-section {
-    max-width: 720px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-  }
-  .map-section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .map-section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--dark);
-  }
-  .layer-control-buttons {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .layer-btn {
-    background: var(--dark);
-    color: var(--cream);
-    border: none;
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    opacity: 0.7;
-  }
-  .layer-btn.active {
-    background: var(--saffron);
-    opacity: 1;
-    color: white;
-  }
-  .layer-btn:hover {
-    opacity: 1;
-    transform: translateY(-1px);
-  }
-  .map-wrapper {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 20px rgba(92,51,23,0.1);
-    height: 400px;
-    background: #e8dcc8;
-  }
+  .combo-item-name { color: var(--cream); font-size: 14px; font-weight: 500; }
+  .combo-item-name small { display: block; font-size: 11.5px; color: rgba(253,246,236,0.5); margin-top: 3px; font-weight: 300; }
+  .combo-price { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--saffron); font-weight: 700; white-space: nowrap; }
+  .combo-price small { font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--muted); display: block; text-align: right; }
+  .map-section { max-width: 720px; margin: 0 auto 60px; padding: 0 20px; }
+  .map-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+  .map-section-header h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--dark); }
+  .map-section-header p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .map-wrapper { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(92,51,23,0.1); height: 400px; background: #e8dcc8; }
   #map { width: 100%; height: 100%; }
-  .map-address-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 14px;
-    padding: 14px 18px;
-    background: var(--card);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .map-address-text {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    flex: 1;
-  }
-  .map-address-text strong {
-    display: block;
-    font-size: 13.5px;
-    color: var(--dark);
-    margin-bottom: 2px;
-  }
-  .directions-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--dark);
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    padding: 9px 18px;
-    border-radius: 100px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.2s ease;
-  }
+  .map-address-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 14px 18px; background: var(--card); border-radius: 12px; border: 1px solid var(--border); flex-wrap: wrap; }
+  .map-address-text { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
+  .map-address-text strong { display: block; font-size: 13.5px; color: var(--dark); margin-bottom: 2px; }
+  .directions-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--dark); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500; padding: 9px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: background 0.2s ease; }
   .directions-btn:hover { background: var(--brown); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    color: rgba(253,246,236,0.4);
-    text-align: center;
-    padding: 36px 20px;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    line-height: 1.8;
-  }
+  footer { background: var(--dark); color: rgba(253,246,236,0.4); text-align: center; padding: 36px 20px; font-size: 12px; letter-spacing: 0.5px; line-height: 1.8; }
   footer strong { color: var(--turmeric); }
-  .footer-call-row {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .footer-call-label {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(253,246,236,0.3);
-  }
-  .footer-call-number {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--turmeric);
-    font-size: 18px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
+  .footer-call-row { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .footer-call-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(253,246,236,0.3); }
+  .footer-call-number { display: inline-flex; align-items: center; gap: 8px; color: var(--turmeric); font-size: 18px; font-family: 'Playfair Display', serif; font-weight: 700; text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
   .footer-call-number:hover { color: var(--saffron); }
-  .footer-call-note {
-    font-size: 11.5px;
-    color: rgba(253,246,236,0.35);
-  }
-
+  .footer-call-note { font-size: 11.5px; color: rgba(253,246,236,0.35); }
   #menu { scroll-margin-top: 20px; }
-
   @media (max-width: 480px) {
     .menu-item { padding: 11px 16px; }
     .category-header { padding: 11px 16px; }
@@ -570,18 +120,11 @@
     .order-banner-text { font-size: 13.5px; }
     .call-btn { font-size: 14px; padding: 11px 22px; }
     .map-address-row { flex-direction: column; align-items: flex-start; }
-    .map-section-header { flex-direction: column; align-items: flex-start; }
   }
-
-  /* ── PRINT STYLES ── */
   @media print {
     @page { size: A4 portrait; margin: 8mm; }
     body { background: #1A1208 !important; color: #FDF6EC !important; }
-    .hero {
-      background: #1A1208 !important;
-      color: #FDF6EC !important;
-      padding: 55px 25px 45px !important;
-    }
+    .hero { background: #1A1208 !important; color: #FDF6EC !important; padding: 55px 25px 45px !important; }
     .hero-badge { border-color: rgba(245,166,35,0.5) !important; color: #F5A623 !important; }
     .hero h1 { color: #FDF6EC !important; }
     .hero h1 span { color: #E8720C !important; }
@@ -590,66 +133,41 @@
     .qr-wrapper { box-shadow: none !important; }
     .menu-section, footer, .order-banner, .map-section { display: none !important; }
   }
-
-  /* Leaflet layer control positioning */
-  .leaflet-control-layers {
-    border-radius: 8px !important;
-    border: none !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-  }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge">✦ Pure Veg ✦ Nashik</div>
   <h1>Flavour<br><span>Fusion</span></h1>
   <p class="hero-sub">Menu Card</p>
   <div class="hero-divider"></div>
-  <p class="hero-address">
-    Shop No. 5, Sunrich Apartment,<br>
-    Near Thete Hospital, Signal,<br>
-    Parijat Nagar, Nashik – 422005
-  </p>
+  <p class="hero-address">Shop No. 5, Sunrich Apartment,<br>Near Thete Hospital, Signal,<br>Parijat Nagar, Nashik – 422005</p>
 </section>
 
-<!-- CALL-TO-ORDER BANNER -->
 <section class="order-banner">
   <div class="order-banner-inner">
     <span class="order-banner-tag">📞 Order on Call</span>
-    <p class="order-banner-text">
-      Want your food <strong>ready when you arrive?</strong><br>
-      Place your order in advance — just give us a call!<br>
-      <strong>We also take orders on call</strong> for pick-up at your convenience.
-    </p>
+    <p class="order-banner-text">Want your food <strong>ready when you arrive?</strong><br>Place your order in advance — just give us a call!<br><strong>We also take orders on call</strong> for pick-up at your convenience.</p>
     <a class="call-btn" href="tel:+919405172144">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.37h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.69-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.37h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.69-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Call to Place Order
     </a>
     <span class="call-btn-note">Tap to call · Available 9 AM to 10 PM</span>
   </div>
 </section>
 
-<!-- QR CODE — hidden on screen, visible only when printing -->
 <section class="qr-section">
   <p class="qr-label">📱 Scan to view our menu</p>
   <div class="qr-wrapper">
-    <img src="data:image/png;base64,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" alt="QR Code" width="240" height="240">
+    <img src="data:image/png;base64,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" alt="QR Code – flavour-fusion.pages.dev" width="240" height="240">
   </div>
   <p class="qr-note">flavour-fusion.pages.dev</p>
 </section>
 
-<!-- FULL MENU -->
 <section class="menu-section" id="menu">
-  <div class="section-title-wrap">
-    <h2>Our Menu</h2>
-    <p>Fresh · Homestyle · Everyday</p>
-  </div>
+  <div class="section-title-wrap"><h2>Our Menu</h2><p>Fresh · Homestyle · Everyday</p></div>
 
-  <!-- BEVERAGES -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">☕</span><h3>Beverages</h3></div>
     <div class="menu-item"><div class="item-name">Special Tea</div><div class="item-price">₹25</div></div>
@@ -662,7 +180,6 @@
     <div class="menu-item"><div class="item-name">Masala Dahi</div><div class="item-price">₹30</div></div>
   </div>
 
-  <!-- QUICK BITES -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">⚡</span><h3>Quick Bites</h3></div>
     <div class="menu-item"><div class="item-name">Vada Pav</div><div class="item-price">₹25<span class="price-label">Cheese ₹45</span></div></div>
@@ -671,7 +188,6 @@
     <div class="menu-item"><div class="item-name">Appe</div><div class="item-price">₹35</div></div>
   </div>
 
-  <!-- SOUTH INDIAN -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🥘</span><h3>South Indian Delights</h3></div>
     <div class="menu-item"><div class="item-name">Idli Sambar</div><div class="item-price">₹50</div></div>
@@ -684,7 +200,6 @@
     <div class="menu-item"><div class="item-name">Peri Peri Maggie</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
   </div>
 
-  <!-- DOSA -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🫓</span><h3>Dosa Varieties</h3></div>
     <div class="menu-item"><div class="item-name">Plain Dosa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
@@ -693,14 +208,12 @@
     <div class="menu-item"><div class="item-name">Special Flavour Fusion Dosa</div><div class="item-price">₹220</div></div>
   </div>
 
-  <!-- MAHARASHTRIAN -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🌶️</span><h3>Maharashtrian Specials</h3></div>
     <div class="menu-item"><div class="item-name">Misal + Papad + Dahi + Water Bottle</div><div class="item-price">₹120</div></div>
     <div class="menu-item"><div class="item-name">Vada Rassa</div><div class="item-price">₹100</div></div>
   </div>
 
-  <!-- UTHAPPA -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🫔</span><h3>Uthappa Varieties</h3></div>
     <div class="menu-item"><div class="item-name">Plain Uthappa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
@@ -710,7 +223,6 @@
     <div class="menu-item"><div class="item-name">Masala Uthappa</div><div class="item-price">₹100<span class="price-label">Cheese ₹130</span></div></div>
   </div>
 
-  <!-- PARATHAS -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🫓</span><h3>Parathas</h3></div>
     <div class="menu-item"><div class="item-name">Aalu Paratha</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
@@ -718,7 +230,6 @@
     <div class="menu-item"><div class="item-name">Mungdal Paratha</div><div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div></div>
   </div>
 
-  <!-- MAIN COURSE -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🍛</span><h3>Main Course</h3></div>
     <div class="menu-item"><div class="item-name">Pavbhaji</div><div class="item-price">₹120<span class="price-label">Butter ₹140</span></div></div>
@@ -728,7 +239,6 @@
     <div class="menu-item"><div class="item-name">Paneer Pulav</div><div class="item-price">₹150<span class="price-label">Cheese ₹180</span></div></div>
   </div>
 
-  <!-- SANDWICH -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🥪</span><h3>Sandwich</h3></div>
     <div class="menu-item"><div class="item-name">Vegetable Sandwich</div><div class="item-price">₹55<span class="price-label">Cheese ₹85</span></div></div>
@@ -736,169 +246,59 @@
     <div class="menu-item"><div class="item-name">Bombay Sandwich</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
   </div>
 
-  <!-- COMBO OFFERS -->
   <div class="combo-box">
     <h3>✦ Combo Offers ✦</h3>
     <div class="combo-item">
-      <div class="combo-item-name">
-        Pavbhaji Combo
-        <small>Pavbhaji · Water Bottle (500ml) · Cold Drink (200ml)</small>
-      </div>
+      <div class="combo-item-name">Pavbhaji Combo<small>Pavbhaji · Water Bottle (500ml) · Cold Drink (200ml)</small></div>
       <div class="combo-price">₹149<small>Special price</small></div>
     </div>
   </div>
-
 </section>
 
-<!-- MAP SECTION with Layer Controls -->
 <section class="map-section">
   <div class="map-section-header">
-    <div>
-      <h2>Find Us</h2>
-      <p>Parijat Nagar, Nashik – 422005</p>
-    </div>
+    <div><h2>Find Us</h2><p>Parijat Nagar, Nashik – 422005</p></div>
   </div>
-  <div class="map-wrapper">
-    <div id="map"></div>
-  </div>
+  <div class="map-wrapper"><div id="map"></div></div>
   <div class="map-address-row">
     <div class="map-address-text">
       <strong>Flavour Fusion</strong>
-      Shop No. 5, Sunrich Apartment, Near Thete Hospital,<br>
-      Signal, Parijat Nagar, Nashik – 422005
+      Shop No. 5, Sunrich Apartment, Near Thete Hospital,<br>Signal, Parijat Nagar, Nashik – 422005
     </div>
     <a class="directions-btn" href="https://www.openstreetmap.org/directions?from=&to=19.9975,73.7898#map=16/19.9975/73.7898" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-      </svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
       Get Directions
     </a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <strong>Flavour Fusion</strong><br>
   Shop No. 5, Sunrich Apartment, Near Thete Hospital,<br>
   Signal, Parijat Nagar, Nashik – 422005
-
   <div class="footer-call-row">
     <span class="footer-call-label">Call us to place an order</span>
     <a class="footer-call-number" href="tel:+919405172144">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.37h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.69-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.37h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.69-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       +91 94051 72144
     </a>
     <span class="footer-call-note">We also take orders on call · Available 9 AM to 10 PM</span>
   </div>
-
   <br>✦ Thank you for choosing Flavour Fusion ✦
 </footer>
 
-<!-- Leaflet JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-control-geocoder/2.4.0/Control.Geocoder.js"></script>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  // Parijat Nagar, Nashik coordinates (near Thete Hospital)
-  const lat = 19.9975;
-  const lng = 73.7898;
-
-  // Define multiple tile layers
-  const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19,
-    name: 'Street View'
-  });
-
-  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: '&copy; <a href="https://www.esri.com">Esri</a> | Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-    maxZoom: 18,
-    name: 'Satellite View'
-  });
-
-  const terrainLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: © <a href="https://opentopomap.org">OpenTopoMap</a>',
-    maxZoom: 17,
-    name: 'Terrain View'
-  });
-
-  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19,
-    name: 'Dark Mode'
-  });
-
-  // Initialize map with default street layer
-  const map = L.map('map', {
-    center: [lat, lng],
-    zoom: 16,
-    scrollWheelZoom: true,
-    zoomControl: true,
-    layers: [streetLayer]
-  });
-
-  // Add layer control panel (standard Leaflet control)
-  const baseMaps = {
-    "🗺️ Street View": streetLayer,
-    "🛰️ Satellite": satelliteLayer,
-    "⛰️ Terrain": terrainLayer,
-    "🌙 Dark Mode": darkLayer
-  };
-
-  L.control.layers(baseMaps).addTo(map);
-
-  // Add scale bar
+  const lat = 19.9975, lng = 73.7898;
+  const streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19 });
+  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: '© Esri', maxZoom: 18 });
+  const darkLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO', subdomains: 'abcd', maxZoom: 19 });
+  const map = L.map('map', { center: [lat, lng], zoom: 16, scrollWheelZoom: true, layers: [streetLayer] });
+  L.control.layers({ "🗺️ Street": streetLayer, "🛰️ Satellite": satelliteLayer, "🌙 Dark": darkLayer }).addTo(map);
   L.control.scale({ metric: true, imperial: false }).addTo(map);
-
-  // Custom saffron marker icon
-  const customIcon = L.divIcon({
-    className: '',
-    html: `<div style="
-      width: 44px; height: 44px;
-      background: #E8720C;
-      border: 3px solid #fff;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      box-shadow: 0 4px 14px rgba(232,114,12,0.6);
-      display: flex; align-items: center; justify-content: center;
-    "><span style="transform: rotate(45deg); font-size: 18px; display:block; text-align:center; line-height:38px;">🍛</span></div>`,
-    iconSize: [44, 44],
-    iconAnchor: [22, 44],
-    popupAnchor: [0, -48],
-  });
-
-  // Add marker with popup
-  const marker = L.marker([lat, lng], { icon: customIcon })
-    .addTo(map)
-    .bindPopup(`
-      <div style="font-family: 'DM Sans', sans-serif; min-width: 200px; padding: 6px 0;">
-        <strong style="font-size: 15px; color: #1A1208;">🍛 Flavour Fusion</strong><br>
-        <span style="font-size: 12px; color: #8B6F47; line-height: 1.6;">
-          Shop No. 5, Sunrich Apartment<br>
-          Near Thete Hospital, Parijat Nagar<br>
-          Nashik – 422005
-        </span><br>
-        <hr style="margin: 8px 0; border-color: #E8D9C0;">
-        <span style="font-size: 11px; color: #2a7a2a;">✓ Famous for Pavbhaji & South Indian</span><br>
-        <a href="tel:+919405172144" style="font-size: 12.5px; color: #E8720C; font-weight: 600; text-decoration: none; margin-top: 6px; display:inline-block;">📞 Call to Order: +91 94051 72144</a>
-      </div>
-    `, { maxWidth: 280 })
-    .openPopup();
-
-  // Add a circle radius to show service area
-  L.circle([lat, lng], {
-    color: '#E8720C',
-    fillColor: '#F5A623',
-    fillOpacity: 0.1,
-    radius: 500,
-    weight: 2,
-    opacity: 0.6
-  }).addTo(map).bindPopup('📍 Our Location | 500m radius');
-
-  console.log('Map initialized with multiple layers!');
+  const icon = L.divIcon({ className: '', html: `<div style="width:44px;height:44px;background:#E8720C;border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 14px rgba(232,114,12,0.6);display:flex;align-items:center;justify-content:center;"><span style="transform:rotate(45deg);font-size:18px;display:block;text-align:center;line-height:38px;">🍛</span></div>`, iconSize: [44,44], iconAnchor: [22,44], popupAnchor: [0,-48] });
+  L.marker([lat, lng], { icon }).addTo(map).bindPopup(`<div style="font-family:sans-serif;min-width:200px;padding:4px 0;"><strong style="font-size:15px;color:#1A1208;">🍛 Flavour Fusion</strong><br><span style="font-size:12px;color:#8B6F47;line-height:1.6;">Shop No. 5, Sunrich Apartment<br>Near Thete Hospital, Parijat Nagar<br>Nashik – 422005</span><br><hr style="margin:8px 0;border-color:#E8D9C0;"><a href="tel:+919405172144" style="font-size:12.5px;color:#E8720C;font-weight:600;text-decoration:none;">📞 Call: +91 94051 72144</a></div>`, { maxWidth: 280 }).openPopup();
+  L.circle([lat, lng], { color: '#E8720C', fillColor: '#F5A623', fillOpacity: 0.1, radius: 500, weight: 2, opacity: 0.6 }).addTo(map);
 </script>
 </body>
 </html>
