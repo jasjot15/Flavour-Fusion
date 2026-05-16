@@ -53,7 +53,7 @@
     50% { transform: translateY(-15px) rotate(5deg); }
   }
   @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
+    0%, 100% { transform: scale(1); opacity: 0.7; }
     50% { transform: scale(1.05); opacity: 1; }
   }
   @keyframes shine {
@@ -69,20 +69,21 @@
     50% { text-shadow: 0 0 20px rgba(232,114,12,0.6); }
   }
   
-  /* Decorative Background Elements */
+  /* Darker Decorative Background Elements */
   .decor-leaf {
     position: fixed;
-    opacity: 0.08;
     pointer-events: none;
     z-index: 0;
-    font-size: 80px;
+    font-size: 65px;
   }
-  .decor-leaf-1 { top: 10%; left: 2%; animation: spin-slow 30s linear infinite; }
-  .decor-leaf-2 { bottom: 15%; right: 2%; animation: spin-slow 25s linear infinite reverse; }
-  .decor-leaf-3 { top: 40%; right: 5%; animation: float 6s ease-in-out infinite; }
-  .decor-leaf-4 { bottom: 30%; left: 3%; animation: spin-slow 20s linear infinite; }
-  .decor-leaf-5 { top: 60%; left: 8%; animation: float 8s ease-in-out infinite reverse; }
-  .decor-leaf-6 { bottom: 10%; right: 10%; animation: spin-slow 35s linear infinite; }
+  .decor-leaf-1 { top: 8%; left: 1%; animation: spin-slow 30s linear infinite; opacity: 0.28; filter: drop-shadow(0 0 6px rgba(232,114,12,0.4)); }
+  .decor-leaf-2 { bottom: 12%; right: 1%; animation: spin-slow 25s linear infinite reverse; opacity: 0.28; filter: drop-shadow(0 0 6px rgba(232,114,12,0.4)); }
+  .decor-leaf-3 { top: 35%; right: 3%; animation: float 6s ease-in-out infinite; opacity: 0.25; filter: drop-shadow(0 0 6px rgba(245,166,35,0.4)); }
+  .decor-leaf-4 { bottom: 28%; left: 2%; animation: spin-slow 20s linear infinite; opacity: 0.28; filter: drop-shadow(0 0 6px rgba(232,114,12,0.4)); }
+  .decor-leaf-5 { top: 60%; left: 6%; animation: float 8s ease-in-out infinite reverse; opacity: 0.25; filter: drop-shadow(0 0 6px rgba(245,166,35,0.4)); }
+  .decor-leaf-6 { bottom: 8%; right: 8%; animation: spin-slow 35s linear infinite; opacity: 0.28; filter: drop-shadow(0 0 6px rgba(232,114,12,0.4)); }
+  .decor-leaf-7 { top: 20%; left: 12%; animation: float 7s ease-in-out infinite; opacity: 0.22; font-size: 55px; filter: drop-shadow(0 0 6px rgba(245,166,35,0.3)); }
+  .decor-leaf-8 { bottom: 45%; right: 12%; animation: spin-slow 28s linear infinite reverse; opacity: 0.22; font-size: 58px; filter: drop-shadow(0 0 6px rgba(232,114,12,0.3)); }
   
   /* Hero Section Enhancement */
   .hero { background: linear-gradient(135deg, var(--dark) 0%, #2a1e12 100%); color: var(--cream); text-align: center; padding: 60px 24px 50px; position: relative; overflow: hidden; z-index: 1; }
@@ -174,8 +175,8 @@
   
   /* Enhanced Footer */
   footer { background: linear-gradient(135deg, var(--dark) 0%, #0a0804 100%); color: rgba(253,246,236,0.5); text-align: center; padding: 48px 24px; font-size: 13px; letter-spacing: 0.5px; line-height: 1.8; position: relative; overflow: hidden; }
-  footer::before { content: '🍛'; position: absolute; top: 10px; left: 10px; font-size: 80px; opacity: 0.03; pointer-events: none; animation: float 8s ease-in-out infinite; }
-  footer::after { content: '🌶️'; position: absolute; bottom: 10px; right: 10px; font-size: 70px; opacity: 0.03; pointer-events: none; animation: spin-slow 25s linear infinite; }
+  footer::before { content: '🍛'; position: absolute; top: 10px; left: 10px; font-size: 80px; opacity: 0.04; pointer-events: none; animation: float 8s ease-in-out infinite; }
+  footer::after { content: '🌶️'; position: absolute; bottom: 10px; right: 10px; font-size: 70px; opacity: 0.04; pointer-events: none; animation: spin-slow 25s linear infinite; }
   footer strong { color: var(--turmeric); font-size: 18px; display: block; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
   .footer-call-row { margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .footer-call-number { display: inline-flex; align-items: center; gap: 12px; color: var(--turmeric); font-size: 22px; font-family: 'Playfair Display', serif; font-weight: 700; text-decoration: none; transition: all 0.3s ease; background: rgba(245,166,35,0.1); padding: 10px 28px; border-radius: 60px; backdrop-filter: blur(5px); }
@@ -193,19 +194,22 @@
     .combo-box h3 { font-size: 18px; }
     .map-wrapper { height: 280px; }
     .footer-call-number { font-size: 16px; padding: 6px 16px; }
+    .decor-leaf { display: none; }
   }
   @media print { .order-banner, .call-btn, .map-section, .qr-section, .decor-leaf { display: none !important; } .menu-section { padding: 20px; } }
 </style>
 </head>
 <body>
 
-<!-- Decorative Floating Elements -->
-<div class="decor-leaf decor-leaf-1">🌿</div>
-<div class="decor-leaf decor-leaf-2">🌶️</div>
+<!-- Decorative Floating Elements - Darker & More Visible -->
+<div class="decor-leaf decor-leaf-1">🌶️</div>
+<div class="decor-leaf decor-leaf-2">🌿</div>
 <div class="decor-leaf decor-leaf-3">🍅</div>
 <div class="decor-leaf decor-leaf-4">🧄</div>
 <div class="decor-leaf decor-leaf-5">🥑</div>
 <div class="decor-leaf decor-leaf-6">🍄</div>
+<div class="decor-leaf decor-leaf-7">🌽</div>
+<div class="decor-leaf decor-leaf-8">🍆</div>
 
 <section class="hero">
   <div class="hero-badge">✦ Pure Veg ✦ Nashik</div>
@@ -263,24 +267,25 @@
     <div class="menu-item"><div class="item-name">Sabudana Vada</div><div class="item-price">₹50</div></div>
   </div>
 
-<!-- South Indian Delights -->
-<div class="category">
+  <!-- South Indian Delights -->
+  <div class="category">
     <div class="category-header"><span class="cat-emoji">🍛</span><h3>South Indian Delights</h3></div>
     <div class="menu-item"><div class="item-name">Plain Dosa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
     <div class="menu-item"><div class="item-name">Masala Dosa</div><div class="item-price">₹80<span class="price-label">Cheese ₹110</span></div></div>
     <div class="menu-item"><div class="item-name">Uttapa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
-   <div class="menu-item"><div class="item-name">Onion Uttapa</div><div class="item-price">₹75<span class="price-label">Cheese ₹105</span></div></div>
+    <div class="menu-item"><div class="item-name">Onion Uttapa</div><div class="item-price">₹75<span class="price-label">Cheese ₹105</span></div></div>
     <div class="menu-item"><div class="item-name">Tomato Uttapa</div><div class="item-price">₹70<span class="price-label">Cheese ₹100</span></div></div>
     <div class="menu-item"><div class="item-name">Mixed Uttapa</div><div class="item-price">₹90<span class="price-label">Cheese ₹120</span></div></div>
-</div>
+  </div>
 
+  <!-- Rolls -->
   <div class="category">
-    <div class="category-header"><span class="cat-emoji">🌯 </span><h3>Rolls</h3></div>
+    <div class="category-header"><span class="cat-emoji">🌯</span><h3>Rolls</h3></div>
     <div class="menu-item"><div class="item-name">Paneer Roll</div><div class="item-price">₹80</div></div>
     <div class="menu-item"><div class="item-name">Cheese Roll</div><div class="item-price">₹110</div></div>
   </div>
 
-  <!-- Dosa Varieties (New Section) -->
+  <!-- Dosa Varieties -->
   <div class="category">
     <div class="category-header"><span class="cat-emoji">🥞</span><h3>Dosa Varieties</h3></div>
     <div class="menu-item"><div class="item-name">Plain Dosa</div><div class="item-price">₹60<span class="price-label">Cheese ₹90</span></div></div>
@@ -443,7 +448,7 @@
   const map = L.map('map', { center: [lat, lng], zoom: 16, scrollWheelZoom: true, layers: [streetLayer] });
   L.control.layers({ "🗺️ Street": streetLayer, "🛰️ Satellite": satelliteLayer, "🌙 Dark": darkLayer }).addTo(map);
   L.control.scale({ metric: true, imperial: false }).addTo(map);
-  const icon = L.divIcon({ className: '', html: `<div style="width:48px;height:48px;background:#E8720C;border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 14px rgba(232,114,12,0.8);display:flex;align-items:center;justify-content:center;animation:pulse 2s ease-in-out infinite;"><span style="transform:rotate(45deg);font-size:20px;display:block;text-align:center;line-height:42px;">🍛</span></div>`, iconSize: [48,48], iconAnchor: [24,48], popupAnchor: [0,-52] });
+  const icon = L.divIcon({ className: '', html: `<div style="width:48px;height:48px;background:#E8720C;border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 14px rgba(232,114,12,0.8);display:flex;align-items:center;justify-content:center;"><span style="transform:rotate(45deg);font-size:20px;display:block;text-align:center;line-height:42px;">🍛</span></div>`, iconSize: [48,48], iconAnchor: [24,48], popupAnchor: [0,-52] });
   L.marker([lat, lng], { icon }).addTo(map).bindPopup(`<div style="font-family:sans-serif;min-width:220px;padding:6px 0;"><strong style="font-size:16px;color:#1A1208;">🍛 Flavour Fusion</strong><br><span style="font-size:12px;color:#8B6F47;line-height:1.6;">Shop No. 5, Sunrich Apartment<br>Near Thete Hospital, Parijat Nagar<br>Nashik – 422005</span><br><hr style="margin:8px 0;border-color:#E8D9C0;"><a href="tel:+919405172144" style="font-size:13px;color:#E8720C;font-weight:700;text-decoration:none;">📞 Call: +91 94051 72144</a></div>`, { maxWidth: 280 }).openPopup();
   L.circle([lat, lng], { color: '#E8720C', fillColor: '#F5A623', fillOpacity: 0.15, radius: 500, weight: 3, opacity: 0.8 }).addTo(map);
 </script>
