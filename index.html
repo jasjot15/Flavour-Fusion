@@ -115,7 +115,8 @@
   @keyframes ringPulse { 0%, 100% { transform: rotate(0deg); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(15deg); } 30% { transform: rotate(-10deg); } 40% { transform: rotate(10deg); } 50% { transform: rotate(0deg); } }
   
   /* QR Section Styling */
-  .qr-section {
+   .qr-section {
+    display: none;  /* Hidden on website */
     text-align: center;
     padding: 40px 24px;
     background: linear-gradient(135deg, var(--dark) 0%, #2a1e12 100%);
@@ -129,7 +130,7 @@
     color: var(--turmeric);
     margin-bottom: 20px;
   }
-  .qr-wrapper {
+   .qr-wrapper {
     display: inline-block;
     background: white;
     padding: 15px;
@@ -137,7 +138,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
-  .qr-wrapper:hover {
+   .qr-wrapper:hover {
     transform: scale(1.02);
   }
   .qr-wrapper img {
@@ -220,9 +221,47 @@
   .footer-call-note { font-size: 12px; color: rgba(253,246,236,0.4); }
   
   /* Print Styles - Hide QR in print */
+    /* Print Styles - Show ONLY QR code, hide everything else */
   @media print {
-    .order-banner, .call-btn, .map-section, .qr-section, .decor-leaf { display: none !important; }
-    .menu-section { padding: 20px; }
+    /* Hide everything by default */
+    body * {
+      display: none !important;
+    }
+    
+    /* Show only the QR section and its children */
+    .qr-section, .qr-section * {
+      display: block !important;
+    }
+    
+    .qr-section {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 100vh !important;
+      padding: 40px !important;
+      background: #1A1208 !important;
+      margin: 0 !important;
+    }
+    
+    .qr-wrapper {
+      margin: 20px auto !important;
+    }
+    
+    .qr-wrapper img {
+      width: 280px !important;
+      height: 280px !important;
+    }
+    
+    .qr-label {
+      font-size: 16px !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .qr-note {
+      font-size: 14px !important;
+      margin-top: 20px !important;
+    }
   }
   
   @media (max-width: 480px) {
