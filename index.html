@@ -115,14 +115,48 @@
   @keyframes ringPulse { 0%, 100% { transform: rotate(0deg); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(15deg); } 30% { transform: rotate(-10deg); } 40% { transform: rotate(10deg); } 50% { transform: rotate(0deg); } }
   
   /* QR Section Styling */
-   .qr-section {
-    display: none;  /* Hidden on website */
+     /* QR Section - Hidden on website, visible only when printing */
+  .qr-section {
+    display: none;
     text-align: center;
     padding: 40px 24px;
     background: linear-gradient(135deg, var(--dark) 0%, #2a1e12 100%);
     position: relative;
     z-index: 1;
   }
+  
+  .qr-header {
+    margin-bottom: 30px;
+  }
+  
+  .qr-restaurant-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--cream);
+    margin-bottom: 5px;
+  }
+  
+  .qr-restaurant-name span {
+    color: var(--saffron);
+    font-style: italic;
+  }
+  
+  .qr-tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--turmeric);
+    margin-top: 5px;
+  }
+  
+  .qr-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--saffron);
+    margin: 15px auto;
+  }
+  
   .qr-label {
     font-size: 13px;
     letter-spacing: 4px;
@@ -130,7 +164,8 @@
     color: var(--turmeric);
     margin-bottom: 20px;
   }
-   .qr-wrapper {
+  
+  .qr-wrapper {
     display: inline-block;
     background: white;
     padding: 15px;
@@ -138,18 +173,40 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
-   .qr-wrapper:hover {
+  
+  .qr-wrapper:hover {
     transform: scale(1.02);
   }
+  
   .qr-wrapper img {
     width: 200px;
     height: 200px;
     display: block;
   }
-  .qr-note {
-    color: rgba(253,246,236,0.6);
+  
+  .qr-address {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .qr-shop-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--turmeric);
+    margin-bottom: 8px;
+  }
+  
+  .qr-shop-address {
     font-size: 12px;
-    margin-top: 15px;
+    color: rgba(253,246,236,0.7);
+    line-height: 1.5;
+  }
+  
+  .qr-note {
+    color: rgba(253,246,236,0.5);
+    font-size: 11px;
+    margin-top: 20px;
     letter-spacing: 0.5px;
   }
   
@@ -244,6 +301,14 @@
       margin: 0 !important;
     }
     
+    .qr-header {
+      margin-bottom: 20px !important;
+    }
+    
+    .qr-restaurant-name {
+      font-size: 48px !important;
+    }
+    
     .qr-wrapper {
       margin: 20px auto !important;
     }
@@ -254,13 +319,21 @@
     }
     
     .qr-label {
-      font-size: 16px !important;
-      margin-bottom: 20px !important;
+      font-size: 14px !important;
+      margin-bottom: 15px !important;
+    }
+    
+    .qr-shop-name {
+      font-size: 20px !important;
+    }
+    
+    .qr-shop-address {
+      font-size: 13px !important;
     }
     
     .qr-note {
-      font-size: 14px !important;
-      margin-top: 20px !important;
+      font-size: 12px !important;
+      margin-top: 15px !important;
     }
   }
   
